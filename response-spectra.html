@@ -402,6 +402,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Response Spectrum Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completed-notebook">Completed Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incomplete-template">Incomplete Template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paths-to-data-files-in-designsafe">Paths to data files in DesignSafe</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mydata">MyData</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#myprojects">MyProjects</a></li>
@@ -436,6 +438,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="response-spectrum-example">
 <h1>Response Spectrum Example<a class="headerlink" href="#response-spectrum-example" title="Permalink to this heading">#</a></h1>
+<section id="completed-notebook">
+<h2>Completed Notebook<a class="headerlink" href="#completed-notebook" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/Webinar-Accelerating-Python2024/response-spectra.ipynb"><img alt="Completed Notebook on DesignSafe" src="https://raw.githubusercontent.com/geoelements/LearnMPM/main/DesignSafe-Badge.svg" /></a></p>
+</section>
+<section id="incomplete-template">
+<h2>Incomplete Template<a class="headerlink" href="#incomplete-template" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/Webinar-Accelerating-Python2024/response-spectra-template.ipynb"><img alt="Incomplete Template on DesignSafe" src="https://raw.githubusercontent.com/geoelements/LearnMPM/main/DesignSafe-Badge.svg" /></a></p>
 <p>This notebook accessed ground motion data from a published project (PRJ-3941v5) and computes response spectra using a frequency domain solution to the convolution integral. The notebook demonstrates the following:</p>
 <ol class="arabic simple">
 <li><p>How to directly access data in a published project without downloading or moving it.</p></li>
@@ -445,6 +454,7 @@ document.write(`
 <li><p>How to compute response spectra using vectorized Python code (much faster!)</p></li>
 <li><p>How to compute response spectra using JAX (Numpy on steroids, fastest!!)</p></li>
 </ol>
+</section>
 <section id="paths-to-data-files-in-designsafe">
 <h2>Paths to data files in DesignSafe<a class="headerlink" href="#paths-to-data-files-in-designsafe" title="Permalink to this heading">#</a></h2>
 <p>The primary file system used by DesignSafe is called Corral, and users can access different directories on Corral using procedures defined at <a class="reference external" href="https://www.designsafe-ci.org/rw/user-guides/data-transfer-guide/setting-the-path-to-designsafe-on-corral/">https://www.designsafe-ci.org/rw/user-guides/data-transfer-guide/setting-the-path-to-designsafe-on-corral/</a>. These procedures are intended for file-transfer utilities, such as Globus, the Tapis-cli, or an FTP client like Cyberduck. The paths have to be specified slightly differently in Jupyter to access MyData, Projects, Published, or Published (NEES) data. The path in a Jupyter notebook must be set as shown below. You should add additional directories to these paths to access files within those folders.</p>
@@ -969,6 +979,8 @@ Execution time (second run) = 0.4380950927734375 s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Response Spectrum Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completed-notebook">Completed Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incomplete-template">Incomplete Template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paths-to-data-files-in-designsafe">Paths to data files in DesignSafe</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mydata">MyData</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#myprojects">MyProjects</a></li>
