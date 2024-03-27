@@ -462,12 +462,12 @@ document.write(`
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">signal2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="n">loop_end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vectorized Python loop time: </span><span class="si">{</span><span class="n">loop_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">loop_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Non vectorized Python loop time: </span><span class="si">{</span><span class="n">loop_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">loop_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vectorized Python loop time: 39.63473 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Non-vectorized Python loop time: 39.63473 seconds
 </pre></div>
 </div>
 </div>

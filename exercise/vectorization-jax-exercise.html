@@ -458,12 +458,7 @@ document.write(`
 
 
 <span class="n">loop_end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vectorized Python loop time: </span><span class="si">{</span><span class="n">loop_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">loop_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vectorized Python loop time: 39.63473 seconds
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Non-vectorized Python loop time: </span><span class="si">{</span><span class="n">loop_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">loop_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -514,12 +509,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vectorized operation time: 0.09802 seconds
-Vectorized operation is 404.4 times faster
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -545,11 +534,6 @@ Vectorized operation is 404.4 times faster
 <span class="nb">print</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;Vectorized operation time: </span><span class="si">{</span><span class="n">vectorized_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vectorized_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vectorized operation time: 1.13637 seconds
 </pre></div>
 </div>
 </div>
@@ -606,11 +590,6 @@ Vectorized operation is 404.4 times faster
 <span class="nb">print</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;JAX CPU operation time: </span><span class="si">{</span><span class="n">jax_end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">jax_start_time</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> seconds&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JAX CPU operation time: 0.31931 seconds
 </pre></div>
 </div>
 </div>
