@@ -4,6 +4,7 @@
 title: Accelerating Python with Cython, Numba and JAX 
 author: Scott Brandenberg, Krishna Kumar
 logo: logo.png
+copyright: "2025"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
