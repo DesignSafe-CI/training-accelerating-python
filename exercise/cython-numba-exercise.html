@@ -148,8 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Accelerating Python with Cython, Numba and JAX - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Accelerating Python with Cython, Numba and JAX - Home"/>`);</script>
   
-    <p class="title logo__title">Accelerating Python with Cython, Numba and JAX</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -543,8 +549,8 @@ Figure 3. Schematic of just-in-time (JIT) compilation.
 <p>Numpy is a the fundamental package for scientific computing in Python. Although Numpy is a Python package, it was not developed in Python. Rather, it is written mostly in C and consists of binary executables compiled from source code. Numpy functions are therefore generally significantly faster than the same operations performed in Python. The term “vectorized operation” refers to passing an entire Numpy array of known data type to an optimized, compiled C code. The example below shows a simple calculation of a harmonic function using vectorized operations compared with the same operation in a Python loop. The vectorized calculation is much faster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># time step in seconds</span>
 
@@ -628,8 +634,8 @@ k = index counter for time</p>
 <code class="docutils literal notranslate"><span class="pre">T_initial</span></code> = initial temperature of plate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">L</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">Nt</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -660,7 +666,7 @@ k = index counter for time</p>
 <p>The function below utilizes nested Python loops to define the temperature array. It accepts an initialized temperature array <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> as arguments and returns the updated temperature array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gamma</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gamma</span><span class="p">):</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
     <span class="n">Nx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Nt</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
@@ -749,9 +755,9 @@ Successfully installed llvmlite-0.39.1 numba-0.56.4
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numba.typed</span> <span class="kn">import</span> <span class="n">List</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numba</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numba.typed</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 </pre></div>
 </div>
 </div>
@@ -764,8 +770,8 @@ Successfully installed llvmlite-0.39.1 numba-0.56.4
 <p><img alt="vectorization" src="https://raw.githubusercontent.com/kks32-courses/accelerating-python/main/images/convolution.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">convolve</span>
 </pre></div>
 </div>
 </div>
@@ -774,7 +780,7 @@ Successfully installed llvmlite-0.39.1 numba-0.56.4
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Performance Measurement Summary</span>
 
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">T_python</span> <span class="o">=</span> <span class="n">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pure Python time: = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
@@ -957,7 +963,7 @@ By Scott Brandenberg, Krishna Kumar
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2025.
       <br/>
     
   </p>

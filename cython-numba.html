@@ -148,8 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Accelerating Python with Cython, Numba and JAX - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Accelerating Python with Cython, Numba and JAX - Home"/>`);</script>
   
-    <p class="title logo__title">Accelerating Python with Cython, Numba and JAX</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -493,8 +499,8 @@ k = index counter for time</p>
 <code class="docutils literal notranslate"><span class="pre">T_initial</span></code> = initial temperature of plate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">L</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">Nt</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -521,7 +527,7 @@ k = index counter for time</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gamma</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gamma</span><span class="p">):</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
     <span class="n">Nx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Nt</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
@@ -573,12 +579,12 @@ def calculate_cython(double[:,:,:] T, double gamma):
 <h2>Using Numba JIT<a class="headerlink" href="#using-numba-jit" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numba.typed</span> <span class="kn">import</span> <span class="n">List</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numba</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numba.typed</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 
 <span class="nd">@numba</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">calculate_numba</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_numba</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
     <span class="n">Nx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -587,7 +593,7 @@ def calculate_cython(double[:,:,:] T, double gamma):
                 <span class="n">T</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">T</span>
 
-<span class="k">def</span> <span class="nf">calculate_numba_wrapper</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_numba_wrapper</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
     <span class="n">T_list</span> <span class="o">=</span> <span class="n">List</span><span class="p">()</span>
     <span class="n">T_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
     <span class="n">T_numba</span> <span class="o">=</span> <span class="n">calculate_numba</span><span class="p">(</span><span class="n">T_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">gamma</span><span class="p">)</span>
@@ -602,10 +608,10 @@ def calculate_cython(double[:,:,:] T, double gamma):
 <p><img alt="Convolution" src="_images/convolution.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">convolve</span>
 
-<span class="k">def</span> <span class="nf">calculate_conv</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_conv</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
     <span class="n">Nt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
     <span class="n">Nx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="c1"># Define the kernel for convolution (Laplacian operator)</span>
@@ -631,7 +637,7 @@ def calculate_cython(double[:,:,:] T, double gamma):
 <h2>Performance measurement<a class="headerlink" href="#performance-measurement" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">T_python</span> <span class="o">=</span> <span class="n">calculate_python</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pure Python time: = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
@@ -813,7 +819,7 @@ By Scott Brandenberg, Krishna Kumar
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2025.
       <br/>
     
   </p>
